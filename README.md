@@ -38,3 +38,11 @@ To run the service tests
 #### Run the server
 To run the service you can use this command
 `uvicorn main:app`
+
+#### Shira's logger infrastructure
+For defining the logger attributes, change the variable in the setup_logger call in main.py
+Additions and changes:
+middleware.py:  activate the logger by middlware 
+logger.py: define the logger attribute and sturcture
+auth.py: added function which check if the request's user is autherized
+main.py: added the definition of the global variables, the definition of the logger and creation of its instance
