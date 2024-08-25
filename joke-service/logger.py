@@ -31,7 +31,7 @@ def setup_logger(log_to_file: bool = False, log_file_path: Optional[str] = 'app.
 
 def log_request(request, response):
     logger = logging.getLogger()
-    account_print = "UNAUTHORIZED" if Auth.is_account_authorized(request=request) \
+    account_print = "UNAUTHORIZED" if not Auth.is_account_authorized(request=request) \
         else str(request.headers.get('authorization'))
     log_message = (
         f"Account: {account_print} | "
