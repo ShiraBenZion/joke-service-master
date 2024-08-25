@@ -5,7 +5,6 @@ from logger import log_request
 
 class LoggingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
-        account_status = request.headers.get("Authorization", "UNAUTHORIZED")
         response: Response = await call_next(request)
-        log_request(request, response, account_status)
+        log_request(request, response)
         return response
