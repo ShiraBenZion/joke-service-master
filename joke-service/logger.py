@@ -3,7 +3,7 @@ from typing import Optional
 from auth import Auth
 
 
-def setup_logger(log_to_file: bool = False, log_file_path: Optional[str] = 'app.log',
+def setup_logger(log_to_file: bool = True, log_file_path: Optional[str] = 'app.log',
                  message_format: str = '%(asctime)s - %(levelname)s - %(message)s',
                  date_format: str = '%Y-%m-%d %H:%M:%S'):
     """
